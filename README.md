@@ -1,3 +1,6 @@
+## NAME:SHYAM SUJIN U
+## REG NO.212223040201
+
 # FULL_ADDER_SUBTRACTOR
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
@@ -43,13 +46,49 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
+```
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+Full Adder
+module fulladd_top(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+wire w1,w2,w3,w4;       
+xor(w1,a,b);
+xor(sum,w1,cin);        
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+and(w2,a,b);
+and(w3,b,cin);
+and(w4,cin,a);
+
+or(carry,w2,w3,w4);
+endmodule
+Full Subracter
+module fullsub_top(a,b,Bin,BO,DIFF);
+input a,b,Bin;
+output BO,DIFF;
+assign DIFF = a ^ b ^ Bin;
+  assign BO = (a & b) | ((a ^ b) & Bin);
+endmodule
+
+Developed by:SHYAM SUJIN U
+ RegisterNumber:212223040201
 */
+```
 
 **RTL Schematic**
+Full Adder
+![image](https://github.com/KishanShreeB/FULL_ADDER_SUBTRACTOR/assets/144870434/d2e11447-391f-4aa0-99e1-d07836a323ed)
+Full Subracter
+![image](https://github.com/KishanShreeB/FULL_ADDER_SUBTRACTOR/assets/144870434/c5af5587-80a5-4e86-8f38-798a3f4bc1ce)
+
 
 **Output Timing Waveform**
+Full_adder
+![image](https://github.com/KishanShreeB/FULL_ADDER_SUBTRACTOR/assets/144870434/11b4b899-d858-450d-a578-18330ae4fc3b)
+Full Subracter
+![image](https://github.com/KishanShreeB/FULL_ADDER_SUBTRACTOR/assets/144870434/c7108399-008a-4502-868f-883083f8e3c8)
+
+
 
 **Result:**
 
